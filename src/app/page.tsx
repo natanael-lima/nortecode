@@ -18,7 +18,7 @@ export default function Page() {
       <main className="min-h-screen w-full bg-indigo-100 text-white">
         
           {/* Contenedor flex para centrar vertical y horizontalmente */}
-          <div className="flex items-center justify-center min-h-screen">
+          <div className="flex items-center">
             <Hero />
           </div>
            {/* Contenido centrado y más angosto */}
