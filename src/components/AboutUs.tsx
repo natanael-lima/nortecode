@@ -1,25 +1,143 @@
 import React from 'react';
-import { FaHeartbeat } from 'react-icons/fa';
+import { FaAward, FaUsers } from 'react-icons/fa';
 import Image from 'next/image';
+import { FiTarget, FiZap } from 'react-icons/fi';
+import { MdMiscellaneousServices } from 'react-icons/md';
 
 export default function AboutUs() {
   return (
       
-      <section id="about" className="h-[70%] py-16  w-full px-6 text-center">
-        {/* Sobre Nosotros */}
-        <h2 className="text-3xl font-bold mb-6 text-zinc-700">Sobre Nosotros</h2>
-        <p className="text-lg">
-          Somos <span className="font-bold">Lima, Loto y Gaitán</span>, un equipo de
-          apasionados por la tecnología. Nuestra misión es crear soluciones digitales
-          que transformen negocios y nuestra visión es ser referentes en innovación.
-        </p>
-        <div className="mt-8 flex justify-center">
-          <img
-            src="/equipo.jpg"
-            alt="Nuestro equipo"
-            className="rounded-2xl shadow-lg w-72"
-          />
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Title */}
+        <div className="text-left mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Nosotros</h2>
+          <p className="text-xl text-gray-600 mt-6  mx-auto">
+            Generando soluciones a las empresas con software innovador desde 2025
+          </p>
         </div>
+
+        {/* Main Content Card */}
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-0">
+            {/* Image Column */}
+            <div className="relative h-64 lg:h-auto">
+              <img
+                src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg"
+                alt="Professional team working together"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-blue-900/20"></div>
+            </div>
+
+            {/* Text Information Column */}
+            <div className="p-8 lg:p-12">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4"> 
+                  Liderando la innovación en software.
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    Somos una empresa de desarrollo de software con visión de futuro, dedicada 
+                    a crear soluciones innovadoras que impulsan el éxito empresarial. Nuestro 
+                    equipo de desarrolladores y diseñadores expertos trabaja incansablemente 
+                    para ofrecer productos que superen las expectativas y transformen la forma en que operan las empresas.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <FaUsers className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Equipo de Expertos</h4>
+                      <p className="text-sm text-gray-600">3 professionals</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                      <FiTarget  className="w-5 h-5 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Proyectos Entregados</h4>
+                      <p className="text-sm text-gray-600">2+ successful</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                      <MdMiscellaneousServices  className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Multiples Servicios</h4>
+                      <p className="text-sm text-gray-600">9+ services</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                      <FiZap  className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Años de Experiencia</h4>
+                      <p className="text-sm text-gray-600">1+ years strong</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-t pt-6">
+                  <p className="text-gray-600 mb-4">
+                    Nuestra misión es conectar las necesidades empresariales complejas con 
+                    las soluciones de software intuitivas. Creemos en el poder de la tecnología
+                     para transformar las organizaciones y crear valor duradero.
+                  </p>
+                  <button className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-md hover:shadow-lg">
+                    Leer mas sobre nosotros
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Info Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+              <FiTarget  className="w-6 h-6 text-blue-600" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Nuestra Vision</h3>
+            <p className="text-gray-600">
+              Ser el proveedor líder de soluciones de software
+              innovadoras que permitan a las empresas alcanzar su máximo potencial en la era digital
+            </p>
+          </div>
+
+          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+              <FaUsers className="w-6 h-6 text-green-600" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Nuestro Valor</h3>
+            <p className="text-gray-600">
+              La innovación, la integridad y la excelencia impulsan todo lo que hacemos. Nos comprometemos 
+              a ofrecer soluciones de calidad manteniendo los más altos estándares éticos.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+              <FaAward className="w-6 h-6 text-purple-600" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Nuestro Enfoque</h3>
+            <p className="text-gray-600">
+              Combinamos tecnología de vanguardia con una profunda experiencia 
+              en la industria para crear soluciones potentes y fáciles de usar.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

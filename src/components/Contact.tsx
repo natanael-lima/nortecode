@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaMapMarkerAlt, FaPaperPlane, FaEnvelope } from 'react-icons/fa';
+import MaintenanceNotice from './MaintenanceNotice';
 
 export default function LocationSubscription() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -9,6 +10,7 @@ export default function LocationSubscription() {
 
   return (
     <section id="contact" className="py-16 w-full px-6 text-center">
+      <MaintenanceNotice />
         <h2 className="text-3xl font-bold mb-10">Contacto</h2>
         <form className="max-w-md mx-auto space-y-4">
           <input
