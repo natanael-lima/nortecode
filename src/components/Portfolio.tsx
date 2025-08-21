@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiExternalLink, FiGithub, FiEye, FiCode, FiSmartphone, FiGlobe } from 'react-icons/fi';
 import { BiGridAlt } from 'react-icons/bi';
+import MaintenanceNotice from './MaintenanceNotice';
 
 interface Project {
   id: number;
@@ -38,7 +39,7 @@ const Portfolio = () => {
       technologies: ["React Native", "Firebase"],
       link: "#",
       github: "#",
-      size: "medium"
+      size: "tall"
     },
     {
       id: 3,
@@ -49,7 +50,7 @@ const Portfolio = () => {
       technologies: ["Vue.js", "D3.js"],
       link: "#",
       github: "#",
-      size: "wide"
+      size: "tall"
     },
     {
       id: 4,
@@ -216,13 +217,11 @@ const Portfolio = () => {
       case 'large':
         return 'col-span-2 row-span-2';
       case 'wide':
-        return 'col-span-2 row-span-1';
-      case 'tall':
-        return 'col-span-1 row-span-2';
+        return 'col-span-1 row-span-1';
       case 'medium':
         return 'col-span-1 row-span-1';
       case 'small':
-        return 'col-span-1 row-span-1';
+        return 'col-span-2 row-span-1';
       default:
         return 'col-span-1 row-span-1';
     }
@@ -231,10 +230,10 @@ const Portfolio = () => {
   const getImageHeight = (size: string) => {
     switch (size) {
       case 'large':
-        return 'h-64';
+        return 'h-124';
       case 'tall':
         return 'h-48';
-      case 'wide':
+      case 'medium':
         return 'h-32';
       default:
         return 'h-40';
@@ -243,15 +242,13 @@ const Portfolio = () => {
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      <MaintenanceNotice />
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6">
-            Our Portfolio
-          </h2>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover our innovative solutions crafted with precision and creativity
+         {/* Title */}
+        <div className="text-left mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Portfolio</h2>
+          <p className="text-xl text-gray-600 mt-6  mx-auto">
+           Descubra nuestras soluciones innovadoras elaboradas con precisión y creatividad.
           </p>
         </div>
 
@@ -271,26 +268,10 @@ const Portfolio = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
                 
-                {/* Floating Action Buttons */}
-                <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
-                  <button className="bg-white/90 backdrop-blur-sm hover:bg-white text-gray-800 p-2.5 rounded-full shadow-lg transition-all duration-200 hover:scale-110">
-                    <FiEye className="w-4 h-4" />
-                  </button>
-                  {project.github && (
-                    <button className="bg-white/90 backdrop-blur-sm hover:bg-white text-gray-800 p-2.5 rounded-full shadow-lg transition-all duration-200 hover:scale-110">
-                      <FiGithub className="w-4 h-4" />
-                    </button>
-                  )}
-                  {project.link && (
-                    <button className="bg-white/90 backdrop-blur-sm hover:bg-white text-gray-800 p-2.5 rounded-full shadow-lg transition-all duration-200 hover:scale-110">
-                      <FiExternalLink className="w-4 h-4" />
-                    </button>
-                  )}
-                </div>
-
+             
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="inline-flex items-center space-x-1.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-sm">
+                  <span className="inline-flex items-center space-x-1.5 bg-gradient-to-r from-sky-600 to-cyan-600 text-white px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-sm">
                     {getCategoryIcon(project.category)}
                     <span>{project.category}</span>
                   </span>
@@ -328,8 +309,8 @@ const Portfolio = () => {
 
                 {/* Action Footer */}
                 <div className="flex items-center justify-between">
-                  <button className="text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors duration-200 hover:underline">
-                    View Project
+                  <button className="cursor-point text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors duration-200 hover:underline">
+                    Solicitar presupuesto
                   </button>
                   <div className="flex space-x-2">
                     {project.github && (
@@ -353,10 +334,10 @@ const Portfolio = () => {
         <div className="text-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 inline-flex items-center space-x-3"
+            className="group bg-sky-700 hover:bg-sky-600/95 text-sky-100 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-0 inline-flex items-center space-x-3"
           >
             <BiGridAlt className="w-5 h-5 group-hover:rotate-180 transition-transform duration-300" />
-            <span>{showAll ? 'Show Less Projects' : 'Explore More Projects'}</span>
+            <span>{showAll ? 'Mostrar Menos Proyectos' : 'Explora Mas Proyectos'}</span>
           </button>
         </div>
 
@@ -388,6 +369,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+      
     </section>
   );
 };

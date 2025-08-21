@@ -25,7 +25,7 @@ export default function Hero() {
 
       {/* Botón principal */}
       <div className="flex flex-wrap gap-4 mt-6">
-        <button className="bg-sky-700 hover:bg-sky-600/95 text-sky-100 px-8 py-3 rounded-lg font-semibold transition flex items-center">
+        <button className="bg-sky-700 hover:bg-sky-600/95 text-sky-100 px-8 py-3 rounded-lg font-semibold transition flex items-center ">
           Hablemos <FiArrowUpRight className="text-xl ml-2" />
         </button>
       </div>

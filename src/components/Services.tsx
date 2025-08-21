@@ -1,5 +1,5 @@
 "use client"
-
+import { useState } from "react"
 
 import { 
   FaGlobe, 
@@ -12,7 +12,7 @@ import {
   FaBolt, 
   FaWrench 
 } from "react-icons/fa";
-import { useState } from "react"
+
 import { Button } from "./Button"
 
 const services = [
@@ -74,76 +74,74 @@ const services = [
 
 export function Services() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [openCard, setOpenCard] = useState<number | null>(null)
 
+  const toggleCard = (index: number) => {
+    setOpenCard(openCard === index ? null : index)
+  }
   return (
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-left mb-16">
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">Nuestros Servicios</h2>
-                <p className="text-xl text-gray-600 mt-6  mx-auto">
-                  Ofrecemos soluciones tecnológicas completas para impulsar tu negocio al siguiente nivel
-                </p>
-              </div>
-          
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => {
-              const IconComponent = service.icon
-              return (
-                <div
-                  key={index}
-                  className={`group relative rounded-lg overflow-hidden p-6 transition-all duration-500 ease-out cursor-pointer border-border/50 hover:bg-white hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 ${
-                    hoveredCard === index ? "scale-105" : "hover:scale-105"
-                  }`}
-                  onMouseEnter={() => setHoveredCard(index)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  style={{
-                    animationDelay: `${index * 100}ms`,
-                  }}
-                >
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
-
-                  {/* Header */}
-                  <div className="relative z-10 pb-4">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
-                        <IconComponent className="h-8 w-8 text-sky-600 group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                      <div className="text-sm font-medium text-muted-foreground opacity-60">0{index + 1}</div>
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.subtitle}
-                    </p>
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative z-10 pt-0">
-                    <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    <button
-                      className="w-full  border rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 transform group-hover:translate-y-[-2px]  group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
-                    >
-                     Solicitar Presupuesto
-                      <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
-                    </button>
-                  </div>
-
-                  {/* Animated border */}
-                  <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-primary/20 transition-all duration-500" />
-                </div>
-              )
-            })}
-          </div>
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-left mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Nuestros Servicios
+          </h2>
+          <p className="text-xl text-gray-600 mt-6 mx-auto">
+            Ofrecemos soluciones tecnológicas completas para impulsar tu
+            negocio al siguiente nivel
+          </p>
         </div>
-      </section>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => {
+            const IconComponent = service.icon
+            const isOpen = openCard === index
+
+            return (
+              <div
+                key={index}
+                className={`group relative rounded-lg overflow-hidden p-6 transition-all duration-500 ease-out hover:scale-105 hover:bg-sky-100 rounded-lg hover:shadow-sky-100`}
+              >
+                {/* Header visible siempre */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="p-3 rounded-xl bg-sky-100">
+                    <IconComponent className="h-8 w-8 text-sky-600" />
+                  </div>
+                  <div className="text-sm font-medium text-gray-500">0{index + 1}</div>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {service.title}
+                </h3>
+
+                {/* Botón + */}
+                <button
+                  onClick={() => toggleCard(index)}
+                  className="absolute bottom-4 right-4 w-8 h-8 rounded-full  bg-sky-300/30 flex items-center justify-center text-sky-700/70 hover:bg-sky-700/80 hover:text-white transition"
+                >
+                  {isOpen ? "−" : "+"}
+                </button>
+
+                {/* Contenido desplegable */}
+                <div
+                  className={`transition-all duration-500 overflow-hidden ${
+                    isOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <p className="text-gray-600 mb-3">{service.subtitle}</p>
+                  <p className="text-sm text-gray-500 mb-6">{service.description}</p>
+
+                  <button className="w-56 border rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-sky-600 hover:text-white hover:border-sky-600">
+                    Solicitar Presupuesto →
+                  </button>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
 
   )
 }
