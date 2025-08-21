@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaPaperPlane, FaEnvelope } from 'react-icons/fa';
 import MaintenanceNotice from './MaintenanceNotice';
 
 export default function LocationSubscription() {
