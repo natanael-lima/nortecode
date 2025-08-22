@@ -1,12 +1,12 @@
 "use client";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import AboutUs from "@/components/AboutUs";
-import Space from "@/components/Space";
-import Portfolio from "@/components/Portfolio";
-import { Services } from "@/components/Services";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import AboutUs from "@/components/sections/AboutUs";
+import { Services } from "@/components/sections/Services";
+import Portfolio from "@/components/sections/Portfolio";
+import Hero from "@/components/sections/Hero";
+import MaintenanceNotice from "@/components/ui/MaintenanceNotice";
 
 
 
@@ -23,8 +23,10 @@ export default function Page() {
             <Header/>
             <section className="py-12">
               <Services />
+              <MaintenanceNotice />
               <Portfolio/>
               <AboutUs />
+              <MaintenanceNotice />
               <Contact />
             </section>
           <Footer />
