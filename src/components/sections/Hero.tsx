@@ -3,7 +3,7 @@ import { FaArrowDown, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from '
 import { FiArrowUpRight } from 'react-icons/fi'
 import { GrInstagram } from 'react-icons/gr'
 import { TiSocialLinkedin } from 'react-icons/ti'
-import TechCarousel from './TechCarousel'
+import TechCarousel from '../ui/TechCarousel'
 
 export default function Hero() {
   return (
@@ -45,11 +45,11 @@ export default function Hero() {
     </div>
 
     {/* Columna Imagen */}
-    <div className="w-full md:w-[75%] h-full mx-auto flex justify-center items-center">
+    <div className="w-full md:w-[75%] h-full mx-auto flex justify-center items-center ">
       <img
         src="/images/2.png"
         alt="Hero"
-        className="h-full w-auto object-contain"
+        className="h-full w-auto object-contain hidden md:block mx-auto"
       />
     </div>
 
