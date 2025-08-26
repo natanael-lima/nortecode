@@ -5,7 +5,7 @@ import { IoClose } from 'react-icons/io5';
 import { FaWhatsapp } from 'react-icons/fa';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
-export default function Header() {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
@@ -53,7 +53,7 @@ export default function Header() {
               
             </div>
             <a href="#" className="hover:text-sky-400 transition">Portafolio</a>
-            <a href="#" className="hover:text-sky-400 transition">Blog</a>
+            <a href="/blog" className="hover:text-sky-400 transition">Blog</a>
             <a href="#" className="hover:text-sky-400 transition">Contacto</a>
 
             {/* Botón especial de WhatsApp */}
@@ -79,7 +79,7 @@ export default function Header() {
 
       {/* Menú lateral móvil */}
       {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-indigo-950 text-white flex flex-col items-start px-6 py-6 animate-slide-in overflow-y-auto">
+        <div className="fixed inset-0 z-50 bg-linear-to-r from-indigo-950 to-sky-700 w-2xs text-white flex flex-col items-start px-6 py-6 animate-slide-in overflow-y-auto">
           {/* Botón cerrar */}
           <button
             className="self-end text-4xl text-sky-50 mb-6"

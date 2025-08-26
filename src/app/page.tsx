@@ -1,7 +1,7 @@
 "use client";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
+import Navbar from "@/components/layout/Navbar";
 import AboutUs from "@/components/sections/AboutUs";
 import { Services } from "@/components/sections/Services";
 import Portfolio from "@/components/sections/Portfolio";
@@ -20,7 +20,7 @@ export default function Page() {
             <Hero />
           </div>
            {/* Contenido centrado y más angosto */}
-            <Header/>
+            <Navbar/>
             <section className="py-12">
               <Services />
               <MaintenanceNotice />
