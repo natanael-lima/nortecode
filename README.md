@@ -1,6 +1,6 @@
 # 🌐 Ligalo Group - Software & Digital Solutions
 
-![Preview Image]([https://i.postimg.cc/HsPvYc85/busness-image-lgl.png])
+[![Preview Image](https://i.postimg.cc/HsPvYc85/busness-image-lgl.png)](https://postimg.cc/LnL3vsT6)
 
 ## 🚀 Sobre Nosotros
 **Ligalo Group** es una empresa en crecimiento dedicada al **desarrollo de software** y **soluciones digitales**.  
