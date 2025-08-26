@@ -13,57 +13,48 @@ import {
 export const servicesList = [
   {
     title: "Landing Page",
-    subtitle: "Páginas de aterrizaje optimizadas para conversión",
     icon: FaGlobe,
-    description: "Diseños atractivos que convierten visitantes en clientes",
+    description: "Páginas de aterrizaje optimizadas para conversión. Diseños atractivos que convierten visitantes en clientes",
   },
   {
     title: "Aplicaciones Web",
-    subtitle: "Soluciones web modernas y escalables",
     icon: FaDesktop,
-    description: "Aplicaciones web responsivas con tecnología de vanguardia",
+    description: "Soluciones web modernas y escalables. Aplicaciones web responsivas con tecnología de vanguardia",
   },
   {
     title: "Aplicaciones de Escritorio",
-    subtitle: "Software nativo para Windows, Mac y Linux",
     icon: FaLaptop,
-    description: "Aplicaciones de escritorio potentes y multiplataforma",
+    description: "Software nativo para Windows, Mac y Linux. Aplicaciones de escritorio potentes y multiplataforma",
   },
   {
     title: "E-Commerce",
-    subtitle: "Tiendas online completas y seguras",
     icon: FaShoppingCart,
-    description: "Plataformas de comercio electrónico con gestión integral",
+    description: "Tiendas online completas y seguras. Plataformas de comercio electrónico con gestión integral",
   },
   {
     title: "POS (Punto de Venta)",
-    subtitle: "Sistemas de punto de venta inteligentes",
     icon: FaCreditCard,
-    description: "Soluciones POS modernas para tu negocio",
+    description: "Sistemas de punto de venta inteligentes. Soluciones POS modernas para tu negocio",
   },
   {
     title: "Sistemas de Gestión",
-    subtitle: "ERP y CRM personalizados para tu empresa",
     icon: FaCog,
-    description: "Sistemas de gestión empresarial a medida",
+    description: "ERP y CRM personalizados para tu empresa. Sistemas de gestión empresarial a medida",
   },
   {
     title: "CMS & Blogs",
-    subtitle: "Gestores de contenido fáciles de usar",
     icon: FaFileAlt,
-    description: "Plataformas de contenido intuitivas y potentes",
+    description: "Gestores de contenido fáciles de usar. Plataformas de contenido intuitivas y potentes",
   },
   {
     title: "Integraciones con APIs",
-    subtitle: "Conecta tus sistemas y automatiza procesos",
     icon: FaBolt,
-    description: "Integraciones seamless con servicios externos",
+    description: "Conecta tus sistemas y automatiza procesos. Integraciones seamless con servicios externos",
   },
   {
     title: "Soporte & Mantenimiento",
-    subtitle: "Mantenimiento continuo y soporte técnico",
     icon: FaWrench,
-    description: "Soporte 24/7 y mantenimiento preventivo",
+    description: "Mantenimiento continuo y soporte técnico. Soporte 24/7 y mantenimiento preventivo",
   },
 ]
 
