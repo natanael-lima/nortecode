@@ -60,7 +60,7 @@ export default function Hero() {
   </div>
 
   {/* Botón scroll-down */}
-  <button className="absolute bottom-6 left-6 animate-bounce p-3 rounded-full border border-white text-white hover:bg-white/20 transition">
+  <button className="absolute z-10 bottom-6 left-6 animate-bounce p-3 rounded-full border border-white text-white hover:bg-white/20 transition">
     <FaArrowDown size={20} />
   </button>
 </section>
