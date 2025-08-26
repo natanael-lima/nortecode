@@ -22,7 +22,6 @@ export function Services() {
             negocio al siguiente nivel
           </p>
         </div>
-
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicesList.map((service, index) => {
@@ -60,7 +59,6 @@ export function Services() {
                   }`}
                 >
                   <p className="text-sm text-sky-900/50 mb-6">{service.description}</p>
-
                   <button className="w-56 border rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-sky-600 hover:text-white hover:border-sky-600">
                     Solicitar Presupuesto →
                   </button>
