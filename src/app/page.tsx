@@ -13,7 +13,7 @@ import MaintenanceNotice from "@/components/ui/MaintenanceNotice";
 export default function Page() {
 
   return (
-      <main className="min-h-screen w-full bg-white text-black">
+      <main className="min-h-screen w-full bg-gradient-to-br from-sky-50 via-white to-sky-100 text-black">
         
           {/* Contenedor flex para centrar vertical y horizontalmente */}
           <div className="flex items-center">
