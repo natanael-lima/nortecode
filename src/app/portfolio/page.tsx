@@ -1,11 +1,12 @@
-import { ProjectCard } from "./project-card"
+import { ProjectCard } from "../../components/ui/ProjectCard"
+import React from 'react'
 
 const projects = [
   {
     title: "E-Commerce Dashboard",
     description:
       "A comprehensive admin dashboard for managing online stores with real-time analytics, inventory management, and order processing capabilities.",
-    image: "/modern-ecommerce-dashboard.png",
+    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
     techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
     liveUrl: "https://example.com",
     codeUrl: "https://github.com/example/ecommerce-dashboard",
@@ -14,7 +15,7 @@ const projects = [
     title: "Task Management App",
     description:
       "A collaborative project management tool with drag-and-drop functionality, team collaboration features, and progress tracking.",
-    image: "/task-management-kanban.png",
+    image: "https://static-cse.canva.com/blob/1105224/PORTFOLIO_IMG1.d532875c.PNG",
     techStack: ["Vue.js", "Node.js", "MongoDB", "Socket.io", "Vuetify"],
     liveUrl: "https://example.com",
     codeUrl: "https://github.com/example/task-manager",
@@ -23,7 +24,7 @@ const projects = [
     title: "Weather Forecast App",
     description:
       "A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics for multiple cities.",
-    image: "/weather-app-interface-with-maps-and-charts.png",
+    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
     techStack: ["React Native", "Redux", "OpenWeather API", "Maps SDK"],
     liveUrl: "https://example.com",
     codeUrl: "https://github.com/example/weather-app",
@@ -32,7 +33,7 @@ const projects = [
     title: "Social Media Platform",
     description:
       "A full-featured social networking platform with real-time messaging, content sharing, and advanced privacy controls.",
-    image: "/social-media-interface.png",
+    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
     techStack: ["React", "GraphQL", "PostgreSQL", "Redis", "AWS"],
     liveUrl: "https://example.com",
     codeUrl: "https://github.com/example/social-platform",
@@ -41,7 +42,7 @@ const projects = [
     title: "AI Content Generator",
     description:
       "An intelligent content creation tool powered by machine learning that helps users generate high-quality written content for various purposes.",
-    image: "/ai-content-generator.png",
+    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
     techStack: ["Python", "FastAPI", "OpenAI API", "React", "Docker"],
     liveUrl: "https://example.com",
     codeUrl: "https://github.com/example/ai-content-generator",
@@ -50,16 +51,16 @@ const projects = [
     title: "Cryptocurrency Tracker",
     description:
       "A real-time cryptocurrency portfolio tracker with price alerts, market analysis, and comprehensive trading insights.",
-    image: "/cryptocurrency-trading-dashboard-with-charts.png",
+    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
     techStack: ["Angular", "Node.js", "WebSocket", "Chart.js", "CoinGecko API"],
     liveUrl: "https://example.com",
     codeUrl: "https://github.com/example/crypto-tracker",
   },
 ]
 
-export function PortfolioGallery() {
+export default function page() {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 bg-white">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-foreground mb-4 text-balance">My Project Portfolio</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
@@ -84,3 +85,4 @@ export function PortfolioGallery() {
     </div>
   )
 }
+

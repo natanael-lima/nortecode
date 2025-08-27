@@ -1,8 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa"
+
+import Badge from "./Badge"
+import Button2 from "./Button"
 
 interface ProjectCardProps {
   title: string
@@ -18,59 +18,58 @@ export function ProjectCard({ title, description, image, techStack, liveUrl, cod
   const imageOnRight = index % 2 === 1
 
   return (
-    <div
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${imageOnRight ? "lg:grid-flow-col-dense" : ""}`}
-    >
-      {/* Image Section - separate card */}
-      <div className={`${imageOnRight ? "lg:col-start-2" : ""}`}>
-        <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-          <div className="relative aspect-video overflow-hidden">
-            <Image
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className={`${imageOnRight ? "lg:order-2" : "lg:order-1"}`}>
+        <div className="relative group">
+          <div className="relative aspect-video overflow-hidden rounded-xl bg-gradient-to-r from-background/20 to-background/5 backdrop-blur-sm border border-border/50 shadow-lg">
+            <img
               src={image || "/placeholder.svg"}
               alt={title}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
+            <div
+              className={`absolute inset-0 bg-gradient-to-${imageOnRight ? "l" : "r"} from-transparent via-transparent to-background/30 pointer-events-none`}
+            />
+
             <div className="absolute bottom-4 left-4 right-4">
               <div className="flex flex-wrap gap-2">
                 {techStack.map((tech) => (
-                  <Badge key={tech} variant="secondary" className="text-xs bg-background/90 backdrop-blur-sm">
+                  <Badge key={tech} color="blue">
                     {tech}
                   </Badge>
                 ))}
+
               </div>
             </div>
           </div>
-        </Card>
+        </div>
       </div>
 
-      {/* Information Section - separate card */}
-      <div className={`${imageOnRight ? "lg:col-start-1" : ""}`}>
-        <Card className="h-full">
-          <CardContent className="p-6 flex-1 flex flex-col justify-center">
-            <h3 className="text-2xl font-bold text-card-foreground mb-4 text-balance">{title}</h3>
-            <p className="text-muted-foreground leading-relaxed text-pretty mb-6">{description}</p>
+      <div className={`${imageOnRight ? "lg:order-1" : "lg:order-2"} space-y-6`}>
+        <div>
+          <h3 className="text-3xl font-bold text-foreground mb-4 text-balance">{title}</h3>
+          <p className="text-lg text-muted-foreground leading-relaxed text-pretty">{description}</p>
+        </div>
 
-            <div className="flex gap-3">
-              {liveUrl && (
-                <Button asChild className="flex-1">
-                  <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Project
-                  </a>
-                </Button>
-              )}
-              {codeUrl && (
-                <Button variant="outline" asChild className="flex-1 bg-transparent">
-                  <a href={codeUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </a>
-                </Button>
-              )}
-            </div>
-          </CardContent>
-        </Card>
+        <div className="flex gap-4">
+          {liveUrl && (
+            <Button2  className="flex-1">
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+                <FaExternalLinkAlt className="w-4 h-4 mr-2" />
+                View Project
+              </a>
+            </Button2>
+          )}
+          {codeUrl && (
+            <Button2 className="flex-1 bg-transparent">
+              <a href={codeUrl} target="_blank" rel="noopener noreferrer">
+                <FaGithub className="w-4 h-4 mr-2" />
+                Code
+              </a>
+            </Button2>
+          )}
+        </div>
       </div>
     </div>
   )
