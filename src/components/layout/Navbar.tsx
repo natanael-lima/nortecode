@@ -17,44 +17,20 @@ export default function Navbar() {
         <div className="text-xl font-bold">
           <a href="#">
             <img
-              src="/images/logo-v2.png"
+              src="/images/logo-to.png"
               alt="Logo"
-              className="h-12 w-auto object-contain"
+              className="h-6 w-auto object-contain"
             />
           </a>
         </div>
 
         {/* Navegación desktop */}
           <nav className="hidden md:flex items-center gap-8 text-lg font-normal text-gray-800 dark:text-gray-200">
-            <a href="#" className="hover:text-sky-400 transition">Inicio</a>
-            <a href="#" className="hover:text-sky-400 transition">Sobre Nosotros</a>
-            
-            {/* Dropdown de Servicios */}
-            <div className="relative group">
-              <button className="flex items-center gap-1 hover:text-sky-300 transition">
-                Servicios <MdKeyboardArrowDown
-                  className="transition-transform duration-200 group-hover:rotate-180"/>
-              </button>
-              
-                <div className="absolute left-0 mt-0 hidden group-hover:block bg-white dark:bg-sky-950 shadow-lg rounded-lg w-72">
-                 <ul className="flex flex-col text-gray-800 dark:text-gray-200">
-                    <li><a href="#" className="block px-4 py-2 hover:bg-sky-50 dark:hover:bg-sky-700 hover:rounded-lg">Landing Page</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-sky-50 dark:hover:bg-sky-700">Aplicaciones Web</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-sky-50 dark:hover:bg-sky-700">Aplicaciones de Escritorio</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-sky-50 dark:hover:bg-sky-700">E-Commerce</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-sky-50 dark:hover:bg-sky-700">Punto de Venta (POS)</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-sky-50 dark:hover:bg-sky-700">Sistemas de Gestión</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-sky-50 dark:hover:bg-sky-700">CMS & Blogs</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-sky-50 dark:hover:bg-sky-700 ">Integraciones con APIs</a></li>
-                    <li><a href="#" className="block px-4 py-2 hover:bg-sky-50 dark:hover:bg-sky-700 hover:rounded-lg">Soporte & Mantenimiento</a></li>
-                  </ul>
-               
-                </div>
-              
-            </div>
-            <a href="#" className="hover:text-sky-400 transition">Portafolio</a>
-            <a href="/blog" className="hover:text-sky-400 transition">Blog</a>
-            <a href="#" className="hover:text-sky-400 transition">Contacto</a>
+            <a href="#" className="hover:text-cyan-200 transition">Sobre Nosotros</a>
+            <a href="#" className="hover:text-cyan-200 transition">Servicios</a>
+            <a href="#" className="hover:text-cyan-200 transition">Portafolio</a>
+            <a href="/blog" className="hover:text-cyan-200 transition">Blog</a>
+            <a href="#" className="hover:text-cyan-200 transition">Contacto</a>
 
             {/* Botón especial de WhatsApp */}
             <a

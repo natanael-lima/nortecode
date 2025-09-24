@@ -7,7 +7,7 @@ import TechCarousel from '../ui/TechCarousel'
 
 export default function Hero() {
   return (
-  <section className="w-full mx-auto h-[80vh] bg-radial-[at_25%_10%] from-sky-700 to-indigo-950 to-57%
+  <section className="w-full mx-auto h-[80vh] bg-radial-[at_30%_25%] from-sky-700 to-indigo-950 to-45%
                    text-white p-8 relative overflow-hidden rounded-b-[3vw] flex items-center">
     {/* Grid: 2 columnas (texto/imagen)*/}
     <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -18,9 +18,7 @@ export default function Hero() {
         </h1>
         <p className="text-md md:text-xl">
           Somos una empresa en crecimiento de <span className="font-extrabold">desarrollo de software</span>, 
-          especializada en <span className="font-extrabold">soluciones digitales</span>, 
-          <span className="font-extrabold">integraciones modernas</span> y 
-          <span className="font-extrabold"> tecnologías innovadoras.</span>
+          especializada en <span className="font-extrabold">soluciones digitales.</span>
         </p>
 
         {/* Botón principal */}
@@ -32,13 +30,13 @@ export default function Hero() {
 
         {/* Redes sociales */}
         <div className="flex gap-4 mt-6">
-          <a href="#" className="p-3 bg-sky-300/20 hover:bg-sky-300/10 rounded-full transition">
+          <a href="#" className="p-3 bg-sky-300/10 hover:bg-sky-300/20 rounded-full transition">
             <FaFacebookF />
           </a>
-          <a href="#" className="p-3 bg-sky-300/20 hover:bg-sky-300/10 rounded-full transition">
+          <a href="#" className="p-3 bg-sky-300/10 hover:bg-sky-300/20 rounded-full transition">
             <GrInstagram />
           </a>
-          <a href="#" className="p-3 bg-sky-300/20 hover:bg-sky-300/10 rounded-full transition">
+          <a href="#" className="p-3 bg-sky-300/10 hover:bg-sky-300/20 rounded-full transition">
             <FaLinkedinIn />
           </a>
         </div>
@@ -49,7 +47,7 @@ export default function Hero() {
         <img
           src="/images/2.png"
           alt="Hero"
-          className="h-full w-auto object-contain hidden md:block mx-auto"
+          className="h-full w-auto object-contain hidden md:block mx-auto opacity-90"
         />
       </div>
 
