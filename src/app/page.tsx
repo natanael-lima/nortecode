@@ -8,8 +8,6 @@ import Portfolio from "@/components/sections/Portfolio";
 import Hero from "@/components/sections/Hero";
 import MaintenanceNotice from "@/components/ui/MaintenanceNotice";
 
-
-
 export default function Page() {
 
   return (
