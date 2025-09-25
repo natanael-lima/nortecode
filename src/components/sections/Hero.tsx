@@ -3,7 +3,7 @@ import { FaArrowDown, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from '
 import { FiArrowUpRight } from 'react-icons/fi'
 import { GrInstagram } from 'react-icons/gr'
 import { TiSocialLinkedin } from 'react-icons/ti'
-import TechCarousel from '../ui/TechCarousel'
+import FooterHero from '../ui/FooterHero'
 
 export default function Hero() {
   return (
@@ -54,7 +54,7 @@ export default function Hero() {
 
       {/* Fila completa: Carrusel (ocupa ambas columnas en md+) */}
       <div className="col-span-1 md:col-span-2 mt-12">
-        <TechCarousel />
+        <FooterHero />
       </div>
     </div>
 

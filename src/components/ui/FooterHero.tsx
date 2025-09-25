@@ -24,22 +24,23 @@ const features = [
 
 export default function FeatureRow() {
   return (
-    <div className="flex items-center justify-center gap-6 w-full">
+    <div className="grid grid-cols-2 gap-6 sm:flex sm:items-center sm:justify-center sm:gap-6 w-full">
       {features.map((item, idx) => (
         <div key={idx} className="flex items-center gap-3">
           {/* Icono con borde circular */}
-          <div className="p-2 border-1 border-teal-100/20 dark:border-teal-100/20 rounded-lg">
+          <div className="p-2 border border-teal-100/20 dark:border-teal-100/20 rounded-lg">
             {item.icon}
           </div>
           {/* Texto */}
-          <span className="text-base font-normal">{item.text}</span>
+          <span className="text-xs font-normal md:text-base">{item.text}</span>
 
-          {/* Línea divisoria, excepto en el último */}
+          {/* Línea divisoria solo en pantallas grandes */}
           {idx < features.length - 1 && (
-            <div className="h-6 w-px bg-gray-100/20  mx-3" />
+            <div className="hidden sm:block h-6 w-px bg-gray-100/20 mx-3" />
           )}
         </div>
       ))}
     </div>
   );
 }
+
