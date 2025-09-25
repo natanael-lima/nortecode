@@ -47,7 +47,7 @@ export default function Hero() {
         <img
           src="/images/0.png"
           alt="Hero"
-          className="h-full w-auto object-contain hidden md:block mx-auto opacity-50 rotate-35"
+          className="h-full w-auto object-contain hidden md:block mx-auto opacity-50 rotate-110"
         />
       </div>
 
