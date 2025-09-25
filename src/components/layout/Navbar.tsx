@@ -26,11 +26,11 @@ export default function Navbar() {
 
         {/* Navegación desktop */}
           <nav className="hidden md:flex items-center gap-8 text-lg font-normal text-gray-800 dark:text-gray-200">
-            <a href="#" className="hover:text-cyan-200 transition">Sobre Nosotros</a>
-            <a href="#" className="hover:text-cyan-200 transition">Servicios</a>
-            <a href="#" className="hover:text-cyan-200 transition">Portafolio</a>
-            <a href="/blog" className="hover:text-cyan-200 transition">Blog</a>
-            <a href="#" className="hover:text-cyan-200 transition">Contacto</a>
+            <a href="#" className="hover:text-emerald-200 transition">Sobre Nosotros</a>
+            <a href="#" className="hover:text-emerald-200 transition">Servicios</a>
+            <a href="#" className="hover:text-emerald-200 transition">Portafolio</a>
+            <a href="/blog" className="hover:text-emerald-200 transition">Blog</a>
+            <a href="#" className="hover:text-emerald-200 transition">Contacto</a>
 
             {/* Botón especial de WhatsApp */}
             <a
