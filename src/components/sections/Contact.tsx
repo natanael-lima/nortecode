@@ -1,13 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { MdEmail, MdPhone, MdLocationOn, MdSend, MdPerson, MdMessage } from 'react-icons/md';
+import { MdEmail, MdPhone, MdLocationOn, MdSend, MdPerson } from 'react-icons/md';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: ''
   });
 
@@ -23,18 +22,18 @@ export default function Contact() {
     e.preventDefault();
     console.log('Form submitted:', formData);
     alert('Message sent successfully!');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100">
+    <div className="min-h-screen">
       {/* Header */}
-      <div className="text-center py-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          Get In <span className="text-sky-600">Touch</span>
+      <div className="text-center py-10">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+         Ponte En <span className="text-teal-700">Contacto</span>
         </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto px-4">
-          We d love to hear from you. Send us a message and we ll respond as soon as possible.
+        <p className="text-lg text-gray-600/70 max-w-2xl mx-auto px-4">
+          Nos encantaría saber de usted. Envíenos un mensaje y le responderemos lo antes posible.
         </p>
       </div>
 
@@ -42,56 +41,43 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 border border-sky-100 relative overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 border border-teal-600/20 relative overflow-hidden">
             {/* Light effect */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400 to-blue-500"></div>
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-sky-100 to-transparent rounded-full opacity-50"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-600 to-teal-800"></div>
+            
             
             <div className="relative z-10">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-800 mb-2">Send Message</h2>
-                <p className="text-gray-600">Fill out the form below and we ll get back to you shortly.</p>
+                <h2 className="text-3xl font-bold text-gray-800 mb-2">Enviar Mensaje</h2>
+                <p className="text-gray-600">Complete el siguiente formulario y nos comunicaremos con usted en breve.</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="relative">
-                    <MdPerson className="absolute left-3 top-3 h-5 w-5 text-sky-500" />
+                    <MdPerson className="absolute left-3 top-3 h-5 w-5 text-teal-700" />
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Your Name"
+                      placeholder="Nombre"
                       required
-                      className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 bg-gray-50 focus:bg-white"
+                      className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-500 focus:teal-sky-500 transition-all duration-300 bg-gray-50 focus:bg-white"
                     />
                   </div>
                   <div className="relative">
-                    <MdEmail className="absolute left-3 top-3 h-5 w-5 text-sky-500" />
+                    <MdEmail className="absolute left-3 top-3 h-5 w-5 text-teal-700" />
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="Your Email"
+                      placeholder="Email"
                       required
-                      className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 bg-gray-50 focus:bg-white"
+                      className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 bg-gray-50 focus:bg-white"
                     />
                   </div>
-                </div>
-
-                <div className="relative">
-                  <MdMessage className="absolute left-3 top-3 h-5 w-5 text-sky-500" />
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    placeholder="Subject"
-                    required
-                    className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 bg-gray-50 focus:bg-white"
-                  />
                 </div>
 
                 <div className="relative">
@@ -102,58 +88,61 @@ export default function Contact() {
                     placeholder="Your Message"
                     rows={6}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all duration-300 bg-gray-50 focus:bg-white resize-none"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 bg-gray-50 focus:bg-white resize-none"
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-sky-500 to-blue-600 text-white py-4 px-6 rounded-xl font-semibold hover:from-sky-600 hover:to-blue-700 transform hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
-                >
-                  <MdSend className="h-5 w-5" />
+          
+                <button className="w-full group border border-teal-300/40 bg-gradient-to-t from-teal-600 to-emerald-700 hover:opacity-100 hover:scale-102 hover:shadow-lg hover:shadow-teal-500/20 cursor-pointer text-teal-50 px-8 py-3 rounded-lg font-semibold transition-all duration-300 ease-in-out flex items-center justify-center gap-2">
+                           <MdSend className="h-5 w-5" />
                   Send Message
-                </button>
+                  </button>
+
+
               </form>
             </div>
           </div>
 
           {/* Contact Information */}
           <div className="space-y-8">
-            {/* Contact Image */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-sky-100 relative">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-sky-500"></div>
-              <div className="h-64 bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-black opacity-25"></div>
-                <div className="relative z-10 text-center text-white">
-                  <div className="w-20 h-20 bg-white opacity-10 rounded-full flex items-center justify-center mb-4 mx-auto backdrop-blur-sm">
-                    <MdEmail className="h-10 w-10 text-sky-800" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Let s Connect</h3>
-                  <p className="text-sky-100">We re here to help you succeed</p>
+            {/* Additional Info */}
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 border border-teal-600/30">
+              <h4 className="font-semibold text-teal-800 mb-3">Business Hours</h4>
+              <div className="space-y-2 text-sm text-teal-600">
+                <div className="flex justify-between">
+                  <span>Monday - Friday</span>
+                  <span>9:00 AM - 6:00 PM</span>
                 </div>
-               
+                <div className="flex justify-between">
+                  <span>Saturday</span>
+                  <span>10:00 AM - 3:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Sunday</span>
+                  <span>Closed</span>
+                </div>
               </div>
             </div>
 
             {/* Contact Details */}
             <div className="space-y-4">
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-sky-100 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-sky-400 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <MdEmail className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500/20 to-teal-600/15 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <MdEmail className="h-6 w-6 text-teal-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800">Email Address</h4>
-                    <p className="text-gray-600">contact@company.com</p>
-                    <p className="text-gray-600">support@company.com</p>
+                    <h4 className="font-semibold text-gray-800">Dirección de Mail</h4>
+                    <p className="text-gray-600">contact@nortecode.com</p>
+                    <p className="text-gray-600">support@nortecode.com</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-sky-100 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <MdPhone className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500/20 to-teal-600/15 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <MdPhone className="h-6 w-6 text-teal-600" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Phone Number</h4>
@@ -163,10 +152,10 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-sky-100 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <MdLocationOn className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500/20 to-teal-600/15 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <MdLocationOn className="h-6 w-6 text-teal-600" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Office Location</h4>
@@ -177,24 +166,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Additional Info */}
-            <div className="bg-gradient-to-br from-sky-50 to-blue-50 rounded-xl p-6 border border-sky-200">
-              <h4 className="font-semibold text-gray-800 mb-3">Business Hours</h4>
-              <div className="space-y-2 text-sm text-gray-600">
-                <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span>9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span>10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span>Closed</span>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

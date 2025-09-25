@@ -11,7 +11,7 @@ import MaintenanceNotice from "@/components/ui/MaintenanceNotice";
 export default function Page() {
 
   return (
-      <main className="min-h-screen w-full bg-gradient-to-br from-lime-50 via-white to-teal-50 text-black">
+      <main className="min-h-screen w-full bg-gradient-to-br from-neutral-50 via-white to-teal-50 text-black">
         
           {/* Contenedor flex para centrar vertical y horizontalmente */}
           <div className="flex items-center">
@@ -21,7 +21,6 @@ export default function Page() {
             <Navbar/>
             <section className="py-12">
               <Services />
-              <MaintenanceNotice />
               <Portfolio/>
               <AboutUs />
               <MaintenanceNotice />

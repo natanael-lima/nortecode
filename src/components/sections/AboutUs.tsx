@@ -9,16 +9,18 @@ export default function AboutUs() {
       
       <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Title */}
-        <div className="text-left mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Nosotros</h2>
-          <p className="text-xl text-gray-600 mt-6  mx-auto">
-            Generando soluciones a las empresas con software innovador desde 2025
+        {/* Header */}
+        <div className="text-center py-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Sobre <span className="text-teal-700">Nosotros</span>
+          </h1>
+          <p className="text-lg text-gray-600/70 max-w-2xl mx-auto px-4">
+            Generando soluciones a las empresas con software innovador desde 2025.
           </p>
         </div>
 
         {/* Main Content Card */}
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Image Column */}
             <div className="relative h-64 lg:h-auto">
@@ -93,8 +95,8 @@ export default function AboutUs() {
                     las soluciones de software intuitivas. Creemos en el poder de la tecnología
                      para transformar las organizaciones y crear valor duradero.
                   </p>
-                  <button className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-md hover:shadow-lg">
-                    Leer mas sobre nosotros
+                  <button className="group border border-teal-300/40 bg-gradient-to-t from-teal-600 to-emerald-700 hover:opacity-100 hover:scale-102 hover:shadow-lg hover:shadow-teal-500/20 cursor-pointer text-teal-50 px-8 py-3 rounded-lg font-semibold transition-all duration-300 ease-in-out flex items-center">
+                          Leer mas sobre nosotros
                   </button>
                 </div>
               </div>
@@ -104,7 +106,7 @@ export default function AboutUs() {
 
         {/* Additional Info Cards */}
         <div className="grid md:grid-cols-3 gap-6 mt-12">
-          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <FiTarget  className="w-6 h-6 text-blue-600" />
             </div>
@@ -115,7 +117,7 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
               <FaUsers className="w-6 h-6 text-green-600" />
             </div>
@@ -126,7 +128,7 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
               <FaAward className="w-6 h-6 text-purple-600" />
             </div>

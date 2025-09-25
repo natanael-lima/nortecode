@@ -1,184 +1,176 @@
-import React, { useState } from 'react';
-import { FiExternalLink, FiGithub, FiEye, FiCode, FiSmartphone, FiGlobe } from 'react-icons/fi';
-import { BiGridAlt } from 'react-icons/bi';
-import { projects} from "../lib/data";
+import React, { useState } from "react";
+import {
+  FiExternalLink,
+  FiGithub,
+  FiCode,
+  FiSmartphone,
+  FiGlobe,
+} from "react-icons/fi";
+import { BiGridAlt } from "react-icons/bi";
+import { projects } from "../lib/data";
+
+const categories = [
+  "All",
+  "Web Development",
+  "Mobile App",
+  "Dashboard",
+  "Enterprise",
+  "Social",
+  "Education",
+  "Real Estate",
+];
 
 const Portfolio = () => {
-  const [showAll, setShowAll] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const displayedProjects = showAll ? projects : projects.slice(0, 8);
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter(
+          (project) =>
+            project.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
 
+  // Patrón intercalado de columnas
+  const getSizePattern = (index: number) => {
+    const pattern = ["col-span-2", "col-span-1", "col-span-1", "col-span-2"];
+    return pattern[index % pattern.length];
+  };
+
+  // Íconos según categoría
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {
-      case 'mobile app':
+      case "mobile app":
         return <FiSmartphone className="w-4 h-4" />;
-      case 'web development':
+      case "web development":
         return <FiGlobe className="w-4 h-4" />;
-      case 'dashboard':
+      case "dashboard":
         return <BiGridAlt className="w-4 h-4" />;
       default:
         return <FiCode className="w-4 h-4" />;
     }
   };
 
-  const getSizeClasses = (size: string) => {
-    switch (size) {
-      case 'large':
-        return 'col-span-2 row-span-2';
-      case 'wide':
-        return 'col-span-1 row-span-1';
-      case 'medium':
-        return 'col-span-1 row-span-1';
-      case 'small':
-        return 'col-span-2 row-span-1';
-      default:
-        return 'col-span-1 row-span-1';
-    }
-  };
-
-  const getImageHeight = (size: string) => {
-    switch (size) {
-      case 'large':
-        return 'h-124';
-      case 'tall':
-        return 'h-48';
-      case 'medium':
-        return 'h-32';
-      default:
-        return 'h-40';
-    }
-  };
-
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-blue-50">
-      
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-         {/* Title */}
-        <div className="text-left mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Portfolio</h2>
-          <p className="text-xl text-gray-600 mt-6  mx-auto">
-           Descubra nuestras soluciones innovadoras elaboradas con precisión y creatividad.
+        {/* Header */}
+        <div className="text-center py-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Nuestro <span className="text-teal-700">Portfolio</span>
+          </h1>
+          <p className="text-lg text-gray-600/70 max-w-2xl mx-auto px-4">
+            Descubra nuestras soluciones innovadoras elaboradas con precisión y
+            creatividad.
           </p>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 auto-rows-fr">
-          {displayedProjects.map((project) => (
-            <div
-              key={project.id}
-              className={`group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 overflow-hidden border border-gray-100 ${getSizeClasses(project.size)}`}
+        {/* Submenú categorías */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-5 py-2 rounded-lg font-medium transition-all ${
+                selectedCategory === cat
+                  ? "bg-teal-600 text-white shadow-md"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
             >
-              {/* Image Container */}
-              <div className={`relative overflow-hidden ${getImageHeight(project.size)}`}>
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid de proyectos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto">
+          {filteredProjects.map((project, index) => (
+            <div
+                key={project.id}
+                className={`hover:scale-105 group relative rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100 ${getSizePattern(
+                  index
+                )} h-[350px]`} // altura fija para uniformidad
+              >
+                {/* Imagen como background */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-                
-             
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="inline-flex items-center space-x-1.5 bg-gradient-to-r from-sky-600 to-cyan-600 text-white px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-sm">
+
+                {/* Overlay oscuro para contraste */}
+                <div className="absolute inset-0 bg-gradient-to-t from-teal-950/80 via-black/40 to-black/20"></div>
+
+                {/* Categoría arriba */}
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="inline-flex items-center space-x-1 bg-teal-50 text-teal-900 px-3 py-1.5 rounded-full text-xs font-semibold shadow-md">
                     {getCategoryIcon(project.category)}
                     <span>{project.category}</span>
                   </span>
                 </div>
 
-                {/* Bottom Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-lg font-bold mb-1 line-clamp-1">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-200 mb-3 line-clamp-2 opacity-90">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
+                {/* Info + Footer */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 z-10 bg-gradient-to-t from-black/50 via-black/40 to-transparent">
+                   {/* Título */}
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {project.title}
+                    </h3>
 
-              {/* Content Section */}
-              <div className="p-4 flex-1 flex flex-col justify-between">
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.technologies.slice(0, 3).map((tech, index) => (
-                    <span
-                      key={index}
-                      className="bg-gradient-to-r from-gray-100 to-gray-50 text-gray-700 px-2.5 py-1 rounded-lg text-xs font-medium border border-gray-200"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <span className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 px-2.5 py-1 rounded-lg text-xs font-medium">
-                      +{project.technologies.length - 3}
-                    </span>
-                  )}
-                </div>
+                    {/* Tecnologías */}
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      {project.technologies.slice(0, 4).map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className=" text-teal-100/75 px-2 py-0.5 bg-teal-800/50 border-1 border-teal-100/30 rounded-full text-xs font-normal"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 4 && (
+                        <span className="bg-gray-700/80 text-white px-2 py-0.5 rounded-md text-xs font-medium">
+                          +{project.technologies.length - 4}
+                        </span>
+                      )}
+                    </div>
 
-                {/* Action Footer */}
-                <div className="flex items-center justify-between">
-                  <button className="cursor-point text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors duration-200 hover:underline">
-                    Solicitar presupuesto
-                  </button>
-                  <div className="flex space-x-2">
-                    {project.github && (
-                      <button className="text-gray-400 hover:text-gray-600 transition-colors duration-200 hover:scale-110 transform">
-                        <FiGithub className="w-4 h-4" />
+                    {/* Descripción */}
+                    <p className="text-sm text-gray-200 line-clamp-2 mb-3">
+                      {project.description}
+                    </p>
+
+                  <div className="flex items-center justify-between">
+                     <button className="group border border-teal-300/40 bg-gradient-to-t from-teal-600 to-emerald-700 hover:opacity-100 hover:shadow-lg hover:shadow-teal-500/20 cursor-pointer text-teal-50 px-4 py-1 rounded-lg font-normal transition-all duration-300 ease-in-out ">
+                              Solicitar presupuesto
                       </button>
-                    )}
-                    {project.link && (
-                      <button className="text-gray-400 hover:text-gray-600 transition-colors duration-200 hover:scale-110 transform">
-                        <FiExternalLink className="w-4 h-4" />
-                      </button>
-                    )}
+                    <div className="flex space-x-3">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-300 hover:text-white transition transform hover:scale-110"
+                        >
+                          <FiGithub className="w-5 h-5" />
+                        </a>
+                      )}
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-300 hover:text-white transition transform hover:scale-110"
+                        >
+                          <FiExternalLink className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+
           ))}
         </div>
-
-        {/* More Projects Button */}
-        <div className="text-center">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="group bg-sky-700 hover:bg-sky-600/95 text-sky-100 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-0 inline-flex items-center space-x-3"
-          >
-            <BiGridAlt className="w-5 h-5 group-hover:rotate-180 transition-transform duration-300" />
-            <span>{showAll ? 'Mostrar Menos Proyectos' : 'Explora Mas Proyectos'}</span>
-          </button>
-        </div>
-
-        {/* Enhanced Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-16 border-t border-gradient-to-r from-transparent via-gray-200 to-transparent">
-          <div className="text-center group">
-            <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">
-              16+
-            </div>
-            <div className="text-gray-600 font-medium">Projects Completed</div>
-          </div>
-          <div className="text-center group">
-            <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">
-              8+
-            </div>
-            <div className="text-gray-600 font-medium">Industries Served</div>
-          </div>
-          <div className="text-center group">
-            <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">
-              100%
-            </div>
-            <div className="text-gray-600 font-medium">Client Satisfaction</div>
-          </div>
-          <div className="text-center group">
-            <div className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">
-              24/7
-            </div>
-            <div className="text-gray-600 font-medium">Support Availables</div>
-          </div>
-        </div>
       </div>
-      
     </section>
   );
 };
