@@ -10,7 +10,7 @@ import { BiGridAlt } from "react-icons/bi";
 import { projects } from "../lib/data";
 
 const categories = [
-  "All",
+  "Todos",
   "Web Development",
   "Mobile App",
   "Dashboard",
@@ -21,10 +21,10 @@ const categories = [
 ];
 
 const Portfolio = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
 
   const filteredProjects =
-    selectedCategory === "All"
+    selectedCategory === "Todos"
       ? projects
       : projects.filter(
           (project) =>
@@ -71,10 +71,10 @@ const Portfolio = () => {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2 rounded-lg font-medium transition-all ${
+              className={`px-4 py-2 rounded-lg font-medium transition-all cursor-pointer ${
                 selectedCategory === cat
-                  ? "bg-teal-600 text-white shadow-md"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-teal-700 text-white shadow-md  hover:shadow-lg hover:shadow-teal-500/20"
+                  : "bg-neutral-200 text-gray-700 hover:bg-gray-200 hover:scale-101 "
               }`}
             >
               {cat}
@@ -139,20 +139,10 @@ const Portfolio = () => {
                     </p>
 
                   <div className="flex items-center justify-between">
-                     <button className="group border border-teal-300/40 bg-gradient-to-t from-teal-600 to-emerald-700 hover:opacity-100 hover:shadow-lg hover:shadow-teal-500/20 cursor-pointer text-teal-50 px-4 py-1 rounded-lg font-normal transition-all duration-300 ease-in-out ">
+                     <button className="group gap-1 border-1 px-4 py-2 rounded-lg transition hover:bg-teal-100 hover:text-teal-900 cursor-pointer text-teal-50 px-4 py-1 rounded-lg font-medium transition-all duration-300 ease-in-out ">
                               Solicitar presupuesto
                       </button>
                     <div className="flex space-x-3">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-300 hover:text-white transition transform hover:scale-110"
-                        >
-                          <FiGithub className="w-5 h-5" />
-                        </a>
-                      )}
                       {project.link && (
                         <a
                           href={project.link}

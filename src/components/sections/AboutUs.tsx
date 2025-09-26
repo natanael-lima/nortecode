@@ -25,11 +25,11 @@ export default function AboutUs() {
             {/* Image Column */}
             <div className="relative h-64 lg:h-auto">
               <img
-                src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg"
+                src="/images/nosotros.png"
                 alt="Professional team working together"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-blue-900/20"></div>
+              <div className="absolute inset-0 "></div>
             </div>
 
             {/* Text Information Column */}
@@ -95,7 +95,7 @@ export default function AboutUs() {
                     las soluciones de software intuitivas. Creemos en el poder de la tecnología
                      para transformar las organizaciones y crear valor duradero.
                   </p>
-                  <button className="group border border-teal-300/40 bg-gradient-to-t from-teal-600 to-emerald-700 hover:opacity-100 hover:scale-102 hover:shadow-lg hover:shadow-teal-500/20 cursor-pointer text-teal-50 px-8 py-3 rounded-lg font-semibold transition-all duration-300 ease-in-out flex items-center">
+                  <button className="group px-4 py-3  font-medium transition-all cursor-pointer bg-teal-700 text-white shadow-md hover:scale-102 hover:shadow-lg hover:shadow-teal-500/20 text-teal-50 rounded-lg  transition-all duration-300 ease-in-out flex items-center">
                           Leer mas sobre nosotros
                   </button>
                 </div>

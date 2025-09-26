@@ -91,9 +91,7 @@ export default function Contact() {
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300 bg-gray-50 focus:bg-white resize-none"
                   />
                 </div>
-
-          
-                <button className="w-full group border border-teal-300/40 bg-gradient-to-t from-teal-600 to-emerald-700 hover:opacity-100 hover:scale-102 hover:shadow-lg hover:shadow-teal-500/20 cursor-pointer text-teal-50 px-8 py-3 rounded-lg font-semibold transition-all duration-300 ease-in-out flex items-center justify-center gap-2">
+                <button className="w-full group  bg-teal-700 text-white shadow-md hover:scale-102 hover:shadow-lg hover:shadow-teal-500/20 text-teal-50 cursor-pointer text-teal-50 px-8 py-3 rounded-lg font-semibold transition-all duration-300 ease-in-out flex items-center justify-center gap-2">
                            <MdSend className="h-5 w-5" />
                   Send Message
                   </button>
