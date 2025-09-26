@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-        <footer className="bg-radial-[at_80%_20%] from-teal-900 to-teal-950 to-90% rounded-t-[3vw] shadow ">
+        <footer className=" bg-radial-[at_80%_20%] from-teal-900 to-teal-950 to-90% rounded-t-[3vw] shadow ">
           <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
               <div className="sm:flex sm:items-center sm:justify-between">
                 
