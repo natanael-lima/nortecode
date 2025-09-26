@@ -11,13 +11,13 @@ import { projects } from "../lib/data";
 
 const categories = [
   "Todos",
-  "Web Development",
-  "Mobile App",
-  "Dashboard",
-  "Enterprise",
-  "Social",
-  "Education",
-  "Real Estate",
+  "Landing Page",
+  "Aplicacion de Escritorio",
+  "Aplicacion Web",
+  "CMS/Blog",
+  "POS",
+  "E-Commerce",
+  "Sistema de Gestion",
 ];
 
 const Portfolio = () => {
@@ -33,8 +33,13 @@ const Portfolio = () => {
 
   // Patrón intercalado de columnas
   const getSizePattern = (index: number) => {
-    const pattern = ["col-span-2", "col-span-1", "col-span-1", "col-span-2"];
-    return pattern[index % pattern.length];
+    const pattern = [
+    "sm:col-span-2", 
+    "sm:col-span-1", 
+    "sm:col-span-1", 
+    "sm:col-span-2"
+    ];
+    return `col-span-2 ${pattern[index % pattern.length]}`;
   };
 
   // Íconos según categoría
@@ -42,9 +47,9 @@ const Portfolio = () => {
     switch (category.toLowerCase()) {
       case "mobile app":
         return <FiSmartphone className="w-4 h-4" />;
-      case "web development":
+      case "aplicacion web":
         return <FiGlobe className="w-4 h-4" />;
-      case "dashboard":
+      case "sistema de gestion":
         return <BiGridAlt className="w-4 h-4" />;
       default:
         return <FiCode className="w-4 h-4" />;
@@ -52,7 +57,7 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center py-10">
@@ -103,7 +108,7 @@ const Portfolio = () => {
 
                 {/* Categoría arriba */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-flex items-center space-x-1 bg-teal-50 text-teal-900 px-3 py-1.5 rounded-full text-xs font-semibold shadow-md">
+                  <span className="inline-flex items-center space-x-1 bg-teal-200 text-teal-900 px-3 py-1.5 rounded-full text-xs font-semibold shadow-md">
                     {getCategoryIcon(project.category)}
                     <span>{project.category}</span>
                   </span>

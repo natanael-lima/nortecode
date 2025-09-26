@@ -1,11 +1,12 @@
 "use client"
 
+import { FaArrowRight } from "react-icons/fa";
 import { servicesList} from "../lib/data";
 
 export function Services() {
 
   return (
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center py-10">
@@ -34,16 +35,16 @@ export function Services() {
                   </div>
                   <div className="text-sm font-medium text-neutral-800/40">0{index + 1}</div>
                 </div>
-                <h3 className="text-xl font-semibold text-teal-800/90">
+                <h3 className="text-xl font-semibold text-teal-950">
                   {service.title}
                 </h3>
 
                 {/* Contenido */}
                 <div>
-                  <p className="text-sm text-neutral-500/80 mb-6">{service.description}</p>
-                
-                  <button className="text-teal-800 hover:text-teal-600 cursor-pointer py-2 font-semibold transition-all duration-300 ease-in-out ">
-                            Leer Más →
+                  <p className="text-sm text-neutral-600/80 mb-6">{service.description}</p>
+
+                  <button className="text-sm text-teal-600 hover:text-teal-500 cursor-pointer py-2 font-semibold transition-all duration-300 ease-in-out flex items-center ">
+                            Leer Más <FaArrowRight className="ml-2 " />
                   </button>
                 </div>
 
