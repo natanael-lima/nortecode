@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
               <div className="sm:flex sm:items-center sm:justify-between">
                 
-                  <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-stone-400 sm:mb-0 dark:text-sky-100">
+                  <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-teal-100 sm:mb-0">
                       <li>
                           <a href="#" className="hover:underline me-4 md:me-6">About</a>
                       </li>
@@ -21,8 +21,8 @@ export default function Footer() {
                       </li>
                   </ul>
               </div>
-              <hr className="my-6 border-stone-200 sm:mx-auto dark:border-sky-200/50 lg:my-8" />
-              <span className="block text-sm text-blue-100 sm:text-center dark:text-gray-stone">© 2025 <a href="#" className="hover:underline">nortecode</a>. All Rights Reserved.</span>
+              <hr className="my-6 border-teal-200/50 sm:mx-auto lg:my-8" />
+              <span className="block text-sm text-teal-100 sm:text-center">© 2025 <a href="#" className="hover:underline text-teal-300">nortecode</a>. All Rights Reserved.</span>
           </div>
       </footer>
   )

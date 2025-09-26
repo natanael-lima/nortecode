@@ -35,7 +35,7 @@ export default function Navbar() {
               href="https://wa.me/5491112345678" // reemplaza con tu número de WhatsApp
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 border-1 px-4 py-2 rounded-lg transition hover:bg-teal-100 hover:text-teal-900"
+              className="flex items-center gap-1 border-1 px-4 py-2 rounded-lg transition hover:bg-teal-100 hover:text-teal-900 duration-300 ease-in-out"
             >
               <FaWhatsapp className="text-2xl" />
               WhatsApp
