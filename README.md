@@ -1,4 +1,4 @@
-# 🌐 Ligalo Group - Software & Digital Solutions
+# 🌐 Nortecode - Software & Digital Solutions
 
 [![Preview Image](https://i.postimg.cc/pX3XP9k9/busness-image-nortecode.png)](https://postimg.cc/SJ7prxBq)
 
@@ -15,11 +15,7 @@ Creamos software que potencia ideas y transforma negocios. 💡
 
 ## 🌍 Sitio Web
 
-👉 [Visita nuestra página oficial](https://lgl-group.vercel.app/)
-
-## 💻 Repositorio
-
-🔗 [Accede al repositorio en GitHub](https://github.com/natanael-lima/lgl-group/tree/develop)
+👉 [Visita nuestra página oficial](https://nortecode.vercel.app/)
 
 ## 🛠️ Tecnologías con las que trabajamos
 
