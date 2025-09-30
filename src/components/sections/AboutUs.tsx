@@ -20,7 +20,7 @@ export default function AboutUs() {
         </div>
 
         {/* Main Content Card */}
-        <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group overflow-hidden">
+        <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-neutral-200/50  group overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Image Column */}
             <div className="relative h-64 lg:h-auto">
@@ -33,7 +33,7 @@ export default function AboutUs() {
             </div>
 
             {/* Text Information Column */}
-            <div className="p-8 lg:p-12">
+            <div className="p-2 lg:p-12">
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4"> 
@@ -106,7 +106,7 @@ export default function AboutUs() {
 
         {/* Additional Info Cards */}
         <div className="grid md:grid-cols-3 gap-6 mt-12">
-          <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
+          <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-neutral-200/50  hover:shadow-xl transition-shadow duration-300 group">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <FiTarget  className="w-6 h-6 text-blue-600" />
             </div>
@@ -117,7 +117,7 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
+          <div className="bg-white rounded-xl shadow-lg p-6  border-2 border-neutral-200/50  hover:shadow-xl transition-shadow duration-300 group">
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
               <FaUsers className="w-6 h-6 text-green-600" />
             </div>
@@ -128,7 +128,7 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
+          <div className="bg-white rounded-xl shadow-lg p-6  border-2 border-neutral-200/50  hover:shadow-xl transition-shadow duration-300 group">
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
               <FaAward className="w-6 h-6 text-purple-600" />
             </div>

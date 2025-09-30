@@ -26,11 +26,11 @@ export function Services() {
             return (
               <div
                 key={index}
-                className={`group relative overflow-hidden p-6 transition-all duration-500 ease-out  hover:scale-103 border-2 border-neutral-200/50 rounded-lg bg-neutral-100/40 hover:bg-neutral-200/40 hover:shadow-sky-100  `}
+                className={`group relative overflow-hidden p-6 transition-all duration-500 ease-out  hover:scale-105 border-2 border-neutral-200/50 rounded-xl bg-neutral-100/40 hover:bg-neutral-200/40 hover:shadow-sky-100  `}
               >
                 {/* Header visible siempre */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 rounded-xl  bg-teal-500/15 ">
+                  <div className="p-3 rounded-xl  bg-teal-600/15 ">
                     <IconComponent className="h-8 w-8 text-teal-600" />
                   </div>
                   <div className="text-sm font-medium text-neutral-800/40">0{index + 1}</div>
@@ -42,8 +42,7 @@ export function Services() {
                 {/* Contenido */}
                 <div>
                   <p className="text-sm text-neutral-600/80 mb-6">{service.description}</p>
-
-                  <button className="text-sm text-teal-600 hover:text-teal-500 cursor-pointer py-2 font-semibold transition-all duration-300 ease-in-out flex items-center ">
+                  <button className="text-sm text-teal-600 hover:text-teal-500 cursor-pointer font-semibold flex items-center ">
                             Leer Más <FaArrowRight className="ml-2 " />
                   </button>
                 </div>

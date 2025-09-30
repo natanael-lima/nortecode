@@ -41,7 +41,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 border border-teal-600/20 relative overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 border-2 border-neutral-200/50  relative overflow-hidden">
             {/* Light effect */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-600 to-teal-800"></div>
             
@@ -104,7 +104,7 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Additional Info */}
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 border border-teal-600/30">
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 border-2 border-teal-600/10">
               <h4 className="font-semibold text-teal-800 mb-3">Business Hours</h4>
               <div className="space-y-2 text-sm text-teal-600">
                 <div className="flex justify-between">
@@ -124,7 +124,7 @@ export default function Contact() {
 
             {/* Contact Details */}
             <div className="space-y-4">
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-neutral-200/50  hover:shadow-xl transition-shadow duration-300 group">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-teal-500/20 to-teal-600/15 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <MdEmail className="h-6 w-6 text-teal-600" />
@@ -137,7 +137,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-neutral-200/50  hover:shadow-xl transition-shadow duration-300 group">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-teal-500/20 to-teal-600/15 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <MdPhone className="h-6 w-6 text-teal-600" />
@@ -150,7 +150,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-teal-700/20 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-neutral-200/50  hover:shadow-xl transition-shadow duration-300 group">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-teal-500/20 to-teal-600/15 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <MdLocationOn className="h-6 w-6 text-teal-600" />
